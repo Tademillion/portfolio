@@ -598,6 +598,185 @@ const Hero = () => {
             </motion.div>
           </motion.div>
         </div>
+
+        {/* Certificate Carousel Section */}
+        <div className="mt-16">
+          <h2 className="text-3xl font-bold text-center mb-8">Certifications</h2>
+          <div className="relative max-w-4xl mx-auto overflow-hidden px-12">
+            <motion.div
+              className="flex"
+              animate={{
+                x: ["0%", "-100%"],
+              }}
+              transition={{
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              style={{
+                width: "200%",
+              }}
+            >
+              {/* First Set of Certificates */}
+              <div className="flex gap-12 w-1/2">
+                {/* Certificate 1 */}
+                <div className="min-w-[300px] mx-6 bg-tertiary p-6 rounded-lg shadow-lg">
+                  <h3 className="text-xl font-bold mb-2">Full Stack Development</h3>
+                  <p className="text-textSecondary mb-4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+                  <a
+                    href="#"
+                    className="text-secondary hover:text-primary transition-colors duration-300"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    View Certificate →
+                  </a>
+                </div>
+
+                {/* Certificate 2 */}
+                <div className="min-w-[300px] mx-6 bg-tertiary p-6 rounded-lg shadow-lg">
+                  <h3 className="text-xl font-bold mb-2">React Advanced Concepts</h3>
+                  <p className="text-textSecondary mb-4">
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                  <a
+                    href="#"
+                    className="text-secondary hover:text-primary transition-colors duration-300"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    View Certificate →
+                  </a>
+                </div>
+
+                {/* Certificate 3 */}
+                <div className="min-w-[300px] mx-6 bg-tertiary p-6 rounded-lg shadow-lg">
+                  <h3 className="text-xl font-bold mb-2">Node.js Mastery</h3>
+                  <p className="text-textSecondary mb-4">
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                  </p>
+                  <a
+                    href="#"
+                    className="text-secondary hover:text-primary transition-colors duration-300"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    View Certificate →
+                  </a>
+                </div>
+
+                {/* Certificate 4 */}
+                <div className="min-w-[300px] mx-6 bg-tertiary p-6 rounded-lg shadow-lg">
+                  <h3 className="text-xl font-bold mb-2">Database Design</h3>
+                  <p className="text-textSecondary mb-4">
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+                  <a
+                    href="#"
+                    className="text-secondary hover:text-primary transition-colors duration-300"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    View Certificate →
+                  </a>
+                </div>
+              </div>
+
+              {/* Duplicate Set for Seamless Loop */}
+              <div className="flex gap-12 w-1/2">
+                {/* Certificate 1 */}
+                <div className="min-w-[300px] mx-6 bg-tertiary p-6 rounded-lg shadow-lg">
+                  <h3 className="text-xl font-bold mb-2">Full Stack Development</h3>
+                  <p className="text-textSecondary mb-4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+                  <a
+                    href="#"
+                    className="text-secondary hover:text-primary transition-colors duration-300"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    View Certificate →
+                  </a>
+                </div>
+
+                {/* Certificate 2 */}
+                <div className="min-w-[300px] mx-6 bg-tertiary p-6 rounded-lg shadow-lg">
+                  <h3 className="text-xl font-bold mb-2">React Advanced Concepts</h3>
+                  <p className="text-textSecondary mb-4">
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                  <a
+                    href="#"
+                    className="text-secondary hover:text-primary transition-colors duration-300"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    View Certificate →
+                  </a>
+                </div>
+
+                {/* Certificate 3 */}
+                <div className="min-w-[300px] mx-6 bg-tertiary p-6 rounded-lg shadow-lg">
+                  <h3 className="text-xl font-bold mb-2">Node.js Mastery</h3>
+                  <p className="text-textSecondary mb-4">
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                  </p>
+                  <a
+                    href="#"
+                    className="text-secondary hover:text-primary transition-colors duration-300"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    View Certificate →
+                  </a>
+                </div>
+
+                {/* Certificate 4 */}
+                <div className="min-w-[300px] mx-6 bg-tertiary p-6 rounded-lg shadow-lg">
+                  <h3 className="text-xl font-bold mb-2">Database Design</h3>
+                  <p className="text-textSecondary mb-4">
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+                  <a
+                    href="#"
+                    className="text-secondary hover:text-primary transition-colors duration-300"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    View Certificate →
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Navigation Dots */}
+            <div className="flex justify-center gap-2 mt-6">
+              {[0, 1, 2, 3].map((index) => (
+                <motion.button
+                  key={index}
+                  className="w-3 h-3 rounded-full bg-secondary/50"
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.9 }}
+                />
+              ))}
+            </div>
+
+            {/* Navigation Arrows */}
+            <button
+              className="absolute left-0 top-1/2 -translate-y-1/2 bg-tertiary p-2 rounded-full shadow-lg hover:bg-secondary/20 transition-colors duration-300"
+            >
+              ←
+            </button>
+            <button
+              className="absolute right-0 top-1/2 -translate-y-1/2 bg-tertiary p-2 rounded-full shadow-lg hover:bg-secondary/20 transition-colors duration-300"
+            >
+              →
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
