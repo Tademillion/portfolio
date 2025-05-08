@@ -4,6 +4,9 @@ import { useInView } from "react-intersection-observer";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 
 const Contact = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -23,10 +26,40 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your form submission logic here
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
+    setSubmitError(null);
+    setSubmitSuccess(false);
+
+    try {
+      const response = await fetch("/api/send-email", {
+        // IMPORTANT:  This should match your Next.js API route file name (e.g., /pages/api/contact.js)
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setFormData({ name: "", email: "", subject: "", message: "" }); // Clear form on success
+        setSubmitSuccess(true);
+        console.log("Email sent successfully");
+      } else {
+        const errorData = await response.json();
+        setSubmitError(
+          errorData.message || "Failed to send email. Please try again."
+        );
+      }
+    } catch (error) {
+      setSubmitError(
+        "An unexpected error occurred. Please check your network connection."
+      );
+      console.error("Error sending message", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
