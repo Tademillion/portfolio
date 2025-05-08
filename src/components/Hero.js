@@ -77,13 +77,15 @@ const Hero = () => {
                       transition={{ duration: 1, delay: 0.5 }}
                       className="text-center"
                     >
-                      <motion.h3 
+                      <motion.h3
                         className="text-5xl font-extrabold mb-2"
+                        initial={{ opacity: 1 }}
                         style={{
-                          background: "linear-gradient(45deg, #00c6ff, #0072ff)",
+                          background:
+                            "linear-gradient(45deg, #00c6ff, #0072ff)",
                           WebkitBackgroundClip: "text",
                           WebkitTextFillColor: "transparent",
-                          filter: "drop-shadow(0 0 2px rgba(0,198,255,0.5))"
+                          filter: "drop-shadow(0 0 2px rgba(0,198,255,0.5))",
                         }}
                         animate={{
                           textShadow: [
@@ -94,47 +96,51 @@ const Hero = () => {
                             "0 0 82px #00c6ff",
                             "0 0 92px #00c6ff",
                             "0 0 102px #00c6ff",
-                            "0 0 151px #00c6ff"
+                            "0 0 151px #00c6ff",
                           ],
                           scale: [1, 1.05, 1],
-                          rotate: [0, 1, 0, -1, 0]
+                          rotate: [0, 1, 0, -1, 0],
                         }}
                         transition={{
                           duration: 2,
                           repeat: Infinity,
                           repeatType: "reverse",
-                          repeatDelay: 4
+                          repeatDelay: 4,
                         }}
                       >
                         Build
                       </motion.h3>
-                      <motion.p 
+                      <motion.p
                         className="text-3xl font-bold mb-2"
+                        initial={{ opacity: 1 }}
                         style={{
-                          background: "linear-gradient(45deg, #ffd700, #ffa500)",
+                          background:
+                            "linear-gradient(45deg, #ffd700, #ffa500)",
                           WebkitBackgroundClip: "text",
-                          WebkitTextFillColor: "transparent"
+                          WebkitTextFillColor: "transparent",
                         }}
                         animate={{
                           rotate: [0, 5, 0, -5, 0],
                           scale: [1, 1.2, 1],
-                          opacity: [0.7, 1, 0.7]
+                          opacity: [0.7, 1, 0.7],
                         }}
                         transition={{
                           duration: 2,
                           repeat: Infinity,
-                          ease: "easeInOut"
+                          ease: "easeInOut",
                         }}
                       >
                         &&
                       </motion.p>
-                      <motion.i 
+                      <motion.i
                         className="text-4xl font-bold block mb-2"
+                        initial={{ opacity: 1 }}
                         style={{
-                          background: "linear-gradient(45deg, #00ff87, #60efff)",
+                          background:
+                            "linear-gradient(45deg, #00ff87, #60efff)",
                           WebkitBackgroundClip: "text",
                           WebkitTextFillColor: "transparent",
-                          filter: "drop-shadow(0 0 2px rgba(0,255,135,0.5))"
+                          filter: "drop-shadow(0 0 2px rgba(0,255,135,0.5))",
                         }}
                         animate={{
                           textShadow: [
@@ -145,28 +151,30 @@ const Hero = () => {
                             "0 0 82px #00ff87",
                             "0 0 92px #00ff87",
                             "0 0 102px #00ff87",
-                            "0 0 151px #00ff87"
+                            "0 0 151px #00ff87",
                           ],
                           y: [0, -5, 0],
-                          scale: [1, 1.1, 1]
+                          scale: [1, 1.1, 1],
                         }}
                         transition={{
                           duration: 2,
                           repeat: Infinity,
                           repeatType: "reverse",
                           repeatDelay: 4,
-                          delay: 2
+                          delay: 2,
                         }}
                       >
                         Connect
                       </motion.i>
-                      <motion.h3 
+                      <motion.h3
                         className="text-6xl font-black"
+                        initial={{ opacity: 1 }}
                         style={{
-                          background: "linear-gradient(45deg, #FF3CAC, #784BA0, #2B86C5)",
+                          background:
+                            "linear-gradient(45deg, #FF3CAC, #784BA0, #2B86C5)",
                           WebkitBackgroundClip: "text",
                           WebkitTextFillColor: "transparent",
-                          filter: "drop-shadow(0 0 2px rgba(255,60,172,0.5))"
+                          filter: "drop-shadow(0 0 2px rgba(255,60,172,0.5))",
                         }}
                         animate={{
                           textShadow: [
@@ -177,17 +185,17 @@ const Hero = () => {
                             "0 0 82px #FF3CAC",
                             "0 0 92px #FF3CAC",
                             "0 0 102px #FF3CAC",
-                            "0 0 151px #FF3CAC"
+                            "0 0 151px #FF3CAC",
                           ],
                           scale: [1, 1.1, 1],
-                          rotate: [0, 2, 0, -2, 0]
+                          rotate: [0, 2, 0, -2, 0],
                         }}
                         transition={{
                           duration: 2,
                           repeat: Infinity,
                           repeatType: "reverse",
                           repeatDelay: 4,
-                          delay: 4
+                          delay: 4,
                         }}
                       >
                         World
@@ -494,8 +502,8 @@ const Hero = () => {
 
           <motion.div
             initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            animate={{ opacity: 1, x: -50 }}
+            transition={{ duration: 2, delay: 0.5, ease: "easeOut" }}
             className="relative"
           >
             <div className="relative aspect-[3/4] w-full max-w-[400px] mx-auto rounded-lg overflow-hidden group">
