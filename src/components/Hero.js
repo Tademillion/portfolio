@@ -1,20 +1,20 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter, FaTelegram } from "react-icons/fa";
 import my_image from "../../src/images/my_image.png"; // Adjust the path as necessary
 const Hero = () => {
   return (
     <div id="home" className="w-full min-h-screen bg-primary text-textPrimary">
       <div className="max-w-[1200px] mx-auto px-8 py-16">
-        <div className="grid md:grid-cols-2 gap-8 items-center">
+        <div className="grid md:grid-cols-3 gap-3 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="space-y-6"
+            className="space-y-6 col-span-2"
           >
             <h1 className="text-4xl md:text-6xl font-bold">
-              Hi, I'm <span className="text-secondary">Your Name</span>
+              Hi, I'm <span className="text-secondary">Tade Million</span>
             </h1>
             <h2 className="text-2xl md:text-3xl text-textSecondary">
               Full Stack Developer
@@ -26,7 +26,7 @@ const Hero = () => {
             </p>
             <div className="flex gap-4">
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/Tademillion"
                 target="_blank"
                 rel="noreferrer"
                 className="text-2xl text-textPrimary hover:text-secondary transition-colors duration-300"
@@ -42,12 +42,12 @@ const Hero = () => {
                 <FaLinkedin />
               </a>
               <a
-                href="https://twitter.com/yourusername"
+                href="https://t.me/AsresuM"
                 target="_blank"
                 rel="noreferrer"
                 className="text-2xl text-textPrimary hover:text-secondary transition-colors duration-300"
               >
-                <FaTwitter />
+                <FaTelegram />
               </a>
             </div>
           </motion.div>
