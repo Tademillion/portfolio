@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FaGithub, FaExternalLinkAlt, FaServer, FaDatabase, FaCode, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
@@ -12,7 +12,7 @@ const Projects = () => {
   const projects = [
     {
       title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce platform with real-time inventory management, user authentication, and payment processing.',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
       image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
       technologies: {
         frontend: ['React', 'Redux', 'Tailwind CSS', 'Material-UI'],
@@ -25,7 +25,7 @@ const Projects = () => {
     },
     {
       title: 'Task Management System',
-      description: 'A collaborative task management application with real-time updates, team collaboration, and progress tracking.',
+      description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
       technologies: {
         frontend: ['React', 'Context API', 'Styled Components'],
@@ -38,7 +38,7 @@ const Projects = () => {
     },
     {
       title: 'Social Media Dashboard',
-      description: 'A comprehensive social media analytics dashboard with data visualization and reporting features.',
+      description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80',
       technologies: {
         frontend: ['React', 'Chart.js', 'Tailwind CSS'],
@@ -53,6 +53,8 @@ const Projects = () => {
 
   const [currentProject, setCurrentProject] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [isAutoScrolling, setIsAutoScrolling] = useState(true);
+  const autoScrollRef = useRef(null);
 
   const nextProject = () => {
     setDirection(1);
@@ -64,20 +66,51 @@ const Projects = () => {
     setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length);
   };
 
+  // Auto-scroll functionality
+  useEffect(() => {
+    if (isAutoScrolling) {
+      autoScrollRef.current = setInterval(() => {
+        nextProject();
+      }, 5000); // Change project every 5 seconds
+    }
+
+    return () => {
+      if (autoScrollRef.current) {
+        clearInterval(autoScrollRef.current);
+      }
+    };
+  }, [isAutoScrolling]);
+
+  // Pause auto-scroll on manual interaction
+  const handleManualScroll = (action) => {
+    setIsAutoScrolling(false);
+    if (autoScrollRef.current) {
+      clearInterval(autoScrollRef.current);
+    }
+    action();
+  };
+
   const slideVariants = {
     enter: (direction) => ({
       x: direction > 0 ? 1000 : -1000,
-      opacity: 0
+      opacity: 0,
+      position: 'absolute',
+      width: '100%',
+      backgroundColor: '#1a1a1a'
     }),
     center: {
-      zIndex: 1,
       x: 0,
-      opacity: 1
+      opacity: 1,
+      position: 'relative',
+      width: '100%',
+      backgroundColor: '#1a1a1a'
     },
     exit: (direction) => ({
-      zIndex: 0,
       x: direction < 0 ? 1000 : -1000,
-      opacity: 0
+      opacity: 0,
+      position: 'absolute',
+      width: '100%',
+      backgroundColor: '#1a1a1a'
     })
   };
 
@@ -93,8 +126,8 @@ const Projects = () => {
         >
           <h2 className='text-4xl font-bold text-secondary mb-8'>Featured Projects</h2>
           
-          <div className='relative'>
-            <AnimatePresence initial={false} custom={direction}>
+          <div className='relative overflow-hidden bg-tertiary rounded-lg'>
+            <AnimatePresence initial={false} custom={direction} mode="sync">
               <motion.div
                 key={currentProject}
                 custom={direction}
@@ -104,7 +137,8 @@ const Projects = () => {
                 exit="exit"
                 transition={{
                   x: { type: "spring", stiffness: 300, damping: 30 },
-                  opacity: { duration: 0.2 }
+                  opacity: { duration: 0.15 },
+                  position: { duration: 0 }
                 }}
                 className='bg-tertiary rounded-lg p-6 shadow-xl'
               >
@@ -196,7 +230,7 @@ const Projects = () => {
 
             <div className='flex justify-center gap-4 mt-8'>
               <button
-                onClick={prevProject}
+                onClick={() => handleManualScroll(prevProject)}
                 className='p-3 bg-tertiary text-textPrimary rounded-full hover:bg-secondary/20 transition-colors duration-300'
                 aria-label="Previous project"
               >
@@ -207,8 +241,10 @@ const Projects = () => {
                   <button
                     key={index}
                     onClick={() => {
-                      setDirection(index > currentProject ? 1 : -1);
-                      setCurrentProject(index);
+                      handleManualScroll(() => {
+                        setDirection(index > currentProject ? 1 : -1);
+                        setCurrentProject(index);
+                      });
                     }}
                     className={`w-3 h-3 rounded-full transition-colors duration-300 ${
                       index === currentProject ? 'bg-secondary' : 'bg-secondary/30'
@@ -218,7 +254,7 @@ const Projects = () => {
                 ))}
               </div>
               <button
-                onClick={nextProject}
+                onClick={() => handleManualScroll(nextProject)}
                 className='p-3 bg-tertiary text-textPrimary rounded-full hover:bg-secondary/20 transition-colors duration-300'
                 aria-label="Next project"
               >
