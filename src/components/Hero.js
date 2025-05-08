@@ -81,7 +81,7 @@ const Hero = () => {
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="absolute top-10 -left-4 bg-tertiary p-3 rounded-lg shadow-lg"
+              className="absolute top-10 -left-4 bg-tertiary p-3 rounded-lg shadow-lg 1"
             >
               <img
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
@@ -100,13 +100,51 @@ const Hero = () => {
                 ease: "easeInOut",
                 delay: 0.5,
               }}
-              className="absolute bottom-10 -right-4 bg-tertiary p-3 rounded-lg shadow-lg"
+              className="absolute bottom-10  -right-4 bg-tertiary p-3 rounded-lg shadow-lg"
             >
               <img
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
                 alt="Node.js"
                 className="w-8 h-8"
               />
+            </motion.div>
+            <motion.div
+              animate={{
+                x: [0, -10, 0],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 0.5,
+              }}
+              className="absolute bottom-10 -left-4 bg-tertiary p-3 rounded-lg shadow-lg"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg"
+                alt="SQL"
+                className="w-8 h-8"
+              />
+            </motion.div>
+            <motion.div
+              animate={{
+                x: [0, -10, 0],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 0.5,
+              }}
+              className="absolute top-10 -right-4 bg-tertiary p-3 rounded-lg shadow-lg"
+            >
+              <div className="bg-blue-500 rounded-md  ">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg"
+                  alt="DotNet"
+                  className="w-8 h-8"
+                />
+              </div>
             </motion.div>
           </motion.div>
         </div>
