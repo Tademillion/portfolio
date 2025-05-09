@@ -5,12 +5,13 @@ const nodemailer = require("nodemailer");
 const cors = require("cors"); // For handling cross-origin requests
 
 const app = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3004;
 
 app.use(cors());
 app.use(bodyParser.json());
 
 app.post("/api/send-email", async (req, res) => {
+  console.log("Received email request:"); // Log the request body for debugging
   const { name, email, subject, message } = req.body;
 
   // Configure your email service (e.g., Gmail, SendGrid, Mailgun)
@@ -38,7 +39,9 @@ app.post("/api/send-email", async (req, res) => {
     res.status(500).json({ error: "Failed to send email" });
   }
 });
-
+app.get("/", (req, res) => {
+  res.send("Server is running");
+});
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });

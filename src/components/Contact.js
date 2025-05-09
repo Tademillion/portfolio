@@ -33,7 +33,7 @@ const Contact = () => {
     setSubmitSuccess(false);
 
     try {
-      const response = await fetch("/api/send-email", {
+      const response = await fetch("http://localhost:3001/api/send-email", {
         // IMPORTANT:  This should match your Next.js API route file name (e.g., /pages/api/contact.js)
         method: "POST",
         headers: {
@@ -76,7 +76,6 @@ const Contact = () => {
           className="text-center"
         >
           <h2 className="text-4xl font-bold text-secondary mb-8">Contact Me</h2>
-
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-6">
               <h3 className="text-2xl font-bold text-secondary">
@@ -86,7 +85,6 @@ const Contact = () => {
                 I'm always open to discussing new projects, creative ideas, or
                 opportunities to be part of your visions.
               </p>
-
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
                   <FaEnvelope className="text-secondary text-xl" />
@@ -102,7 +100,6 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <input

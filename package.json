@@ -9,6 +9,7 @@
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.5.0",
     "autoprefixer": "^10.4.14",
+    "cors": "^2.8.5",
     "framer-motion": "^12.10.0",
     "postcss": "^8.4.31",
     "react": "^19.1.0",

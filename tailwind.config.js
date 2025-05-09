@@ -16,6 +16,19 @@ module.exports = {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
       },
+      animation: {
+        'spin-slow': 'spin 8s linear infinite',
+        'glitch': 'glitch 2s ease-in-out infinite',
+      },
+      keyframes: {
+        glitch: {
+          '0%, 100%': { transform: 'translate(0)' },
+          '20%': { transform: 'translate(-2px, 2px)' },
+          '40%': { transform: 'translate(-2px, -2px)' },
+          '60%': { transform: 'translate(2px, 2px)' },
+          '80%': { transform: 'translate(2px, -2px)' },
+        }
+      },
     },
   },
   plugins: [],
