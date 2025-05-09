@@ -1,8 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FaReact, FaNodeJs, FaDatabase, FaServer, FaTools } from 'react-icons/fa';
-import { SiDotnet, SiMongodb, SiMysql, SiJavascript, SiHtml5, SiCss3 } from 'react-icons/si';
 
 const Skills = () => {
   const [ref, inView] = useInView({
@@ -10,97 +8,98 @@ const Skills = () => {
     threshold: 0.1,
   });
 
-  const skillCategories = [
-    {
-      title: 'Frontend Development',
-      icon: <FaReact className="text-4xl text-secondary" />,
-      skills: [
-        { name: 'React', icon: <FaReact />, description: 'Building modern, responsive UIs with React and its ecosystem' },
-        { name: 'JavaScript', icon: <SiJavascript />, description: 'Advanced JavaScript concepts and modern ES6+ features' },
-        { name: 'HTML5', icon: <SiHtml5 />, description: 'Semantic HTML and accessibility best practices' },
-        { name: 'CSS3', icon: <SiCss3 />, description: 'Modern CSS with Flexbox, Grid, and animations' },
-      ]
-    },
-    {
-      title: 'Backend Development',
-      icon: <FaServer className="text-4xl text-secondary" />,
-      skills: [
-        { name: 'Node.js', icon: <FaNodeJs />, description: 'Building scalable server-side applications' },
-        { name: '.NET Core', icon: <SiDotnet />, description: 'Enterprise-level applications with C# and .NET' },
-        { name: 'Express.js', icon: <FaNodeJs />, description: 'RESTful APIs and middleware development' },
-        { name: 'RESTful APIs', icon: <FaServer />, description: 'Designing and implementing RESTful services' },
-      ]
-    },
-    {
-      title: 'Database Management',
-      icon: <FaDatabase className="text-4xl text-secondary" />,
-      skills: [
-        { name: 'MongoDB', icon: <SiMongodb />, description: 'NoSQL database design and optimization' },
-        { name: 'SQL', icon: <SiMysql />, description: 'Relational database design and complex queries' },
-        { name: 'Mongoose', icon: <SiMongodb />, description: 'MongoDB ODM and data modeling' },
-        { name: 'Database Design', icon: <FaDatabase />, description: 'Database architecture and optimization' },
-      ]
-    },
-    {
-      title: 'Development Tools',
-      icon: <FaTools className="text-4xl text-secondary" />,
-      skills: [
-        { name: 'Git & GitHub', icon: <FaTools />, description: 'Version control and collaborative development' },
-        { name: 'Docker', icon: <FaTools />, description: 'Containerization and deployment' },
-        { name: 'CI/CD', icon: <FaTools />, description: 'Continuous Integration and Deployment pipelines' },
-        { name: 'Testing', icon: <FaTools />, description: 'Unit testing and integration testing' },
-      ]
-    }
-  ];
+  const skills = {
+    'Frontend Development': [
+      { name: 'React', level: 90 },
+      { name: 'JavaScript/TypeScript', level: 85 },
+      { name: 'HTML5/CSS3', level: 95 },
+      { name: 'Tailwind CSS', level: 90 },
+      { name: 'Redux/Context API', level: 85 },
+    ],
+    'Backend Development': [
+      { name: 'Node.js', level: 85 },
+      { name: 'Express.js', level: 80 },
+      { name: 'RESTful APIs', level: 90 },
+      { name: 'GraphQL', level: 75 },
+      { name: '.NET Core', level: 80 },
+    ],
+    'Database & Cloud': [
+      { name: 'MongoDB', level: 85 },
+      { name: 'SQL/PostgreSQL', level: 80 },
+      { name: 'AWS', level: 75 },
+      { name: 'Docker', level: 70 },
+      { name: 'CI/CD', level: 75 },
+    ],
+    'Soft Skills': [
+      { name: 'Problem Solving', level: 95 },
+      { name: 'Team Collaboration', level: 90 },
+      { name: 'Communication', level: 90 },
+      { name: 'Time Management', level: 85 },
+      { name: 'Agile/Scrum', level: 85 },
+    ],
+  };
 
   return (
-    <div id='skills' className='w-full min-h-screen bg-primary text-textPrimary'>
-      <div className='max-w-[1200px] mx-auto px-8 py-16'>
+    <div id="skills" className="w-full min-h-screen bg-primary text-textPrimary">
+      <div className="max-w-[1200px] mx-auto px-8 py-16">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className='text-center'
+          className="text-center"
         >
-          <h2 className='text-4xl font-bold text-secondary mb-8'>Technical Skills</h2>
+          <h2 className="text-4xl font-bold text-secondary mb-8">Skills & Expertise</h2>
           
-          <div className='grid md:grid-cols-2 gap-8'>
-            {skillCategories.map((category, index) => (
-              <motion.div
-                key={category.title}
-                initial={{ opacity: 0, x: -20 }}
-                animate={inView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className='bg-tertiary p-6 rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300'
-              >
-                <div className='flex items-center gap-4 mb-6'>
-                  {category.icon}
-                  <h3 className='text-2xl font-bold text-secondary'>{category.title}</h3>
-                </div>
-                <div className='space-y-6'>
-                  {category.skills.map((skill, skillIndex) => (
-                    <motion.div
-                      key={skill.name}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={inView ? { opacity: 1, y: 0 } : {}}
-                      transition={{ duration: 0.5, delay: (index * 0.1) + (skillIndex * 0.1) }}
-                      className='group hover:bg-secondary/10 p-4 rounded-lg transition-colors duration-300'
-                    >
-                      <div className='flex items-start gap-4'>
-                        <div className='text-2xl text-secondary group-hover:scale-110 transition-transform duration-300'>
-                          {skill.icon}
-                        </div>
-                        <div>
-                          <h4 className='text-lg font-semibold text-secondary'>{skill.name}</h4>
-                          <p className='text-textSecondary mt-1'>{skill.description}</p>
-                        </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {Object.entries(skills).map(([category, skillList]) => (
+              <div key={category} className="bg-tertiary p-6 rounded-lg shadow-xl">
+                <h3 className="text-2xl font-bold text-secondary mb-6">{category}</h3>
+                <div className="space-y-4">
+                  {skillList.map((skill) => (
+                    <div key={skill.name}>
+                      <div className="flex justify-between mb-2">
+                        <span className="text-textPrimary">{skill.name}</span>
+                        <span className="text-secondary">{skill.level}%</span>
                       </div>
-                    </motion.div>
+                      <div className="h-2 bg-tertiary rounded-full overflow-hidden">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          animate={inView ? { width: `${skill.level}%` } : {}}
+                          transition={{ duration: 1, ease: "easeOut" }}
+                          className="h-full bg-gradient-to-r from-secondary to-purple-500"
+                        />
+                      </div>
+                    </div>
                   ))}
                 </div>
-              </motion.div>
+              </div>
             ))}
+          </div>
+
+          {/* Additional Skills Section */}
+          <div className="mt-12">
+            <h3 className="text-2xl font-bold text-secondary mb-6">Additional Skills</h3>
+            <div className="flex flex-wrap justify-center gap-4">
+              {[
+                'Git/GitHub', 'Jest', 'React Testing Library', 'Webpack',
+                'Next.js', 'Material-UI', 'Styled Components', 'SASS',
+                'Mongoose', 'TypeORM', 'Redis', 'WebSocket',
+                'JWT', 'OAuth', 'REST', 'GraphQL',
+                'Responsive Design', 'Cross-browser Compatibility', 'Performance Optimization',
+                'SEO', 'Accessibility', 'Security Best Practices'
+              ].map((skill) => (
+                <motion.span
+                  key={skill}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={inView ? { opacity: 1, scale: 1 } : {}}
+                  transition={{ duration: 0.3 }}
+                  className="px-4 py-2 bg-tertiary text-textPrimary rounded-full hover:bg-secondary/20 transition-colors duration-300"
+                >
+                  {skill}
+                </motion.span>
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>
