@@ -2,15 +2,22 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaTwitter, FaTelegram } from "react-icons/fa";
 import my_image from "../../src/images/my_image.png"; // Adjust the path as necessary
+import { useInView } from 'react-intersection-observer';
 
 const Hero = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
     <div id="home" className="w-full min-h-screen bg-primary text-textPrimary">
       <div className="max-w-[1200px] mx-auto px-8 py-16">
         <div className="grid md:grid-cols-3 gap-3 items-center">
           <motion.div
+            ref={ref}
             initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5 }}
             className="space-y-6 col-span-2"
           >
@@ -501,8 +508,9 @@ const Hero = () => {
           </motion.div>
 
           <motion.div
+            ref={ref}
             initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: -50 }}
+            animate={inView ? { opacity: 1, x: -50 } : {}}
             transition={{ duration: 2, delay: 0.5, ease: "easeOut" }}
             className="relative"
           >

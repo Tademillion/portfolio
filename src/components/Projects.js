@@ -149,7 +149,12 @@ const Projects = () => {
                       alt={projects[currentProject].title}
                       className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-110'
                     />
-                    <div className='absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
+                    <div className='absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end'>
+                      <div className='p-4'>
+                        <h3 className='text-xl font-bold text-secondary mb-2'>{projects[currentProject].title}</h3>
+                        <p className='text-textSecondary'>{projects[currentProject].description}</p>
+                      </div>
+                    </div>
                   </div>
                   <div className='space-y-4'>
                     <h3 className='text-2xl font-bold text-secondary'>{projects[currentProject].title}</h3>
