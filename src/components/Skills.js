@@ -1,8 +1,21 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { FaReact, FaNodeJs, FaDatabase, FaTools, FaServer, FaMobile } from 'react-icons/fa';
-import { SiTypescript, SiJavascript, SiPython, SiDocker, SiAws } from 'react-icons/si';
+import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import {
+  FaReact,
+  FaNodeJs,
+  FaDatabase,
+  FaTools,
+  FaServer,
+  FaMobile,
+} from "react-icons/fa";
+import {
+  SiTypescript,
+  SiJavascript,
+  SiPython,
+  SiDocker,
+  SiAws,
+} from "react-icons/si";
 
 const Skills = () => {
   const [ref, inView] = useInView({
@@ -19,8 +32,8 @@ const Skills = () => {
         { name: "TypeScript", level: 90 },
         { name: "JavaScript", level: 95 },
         { name: "HTML/CSS", level: 90 },
-        { name: "Redux", level: 85 },
-      ]
+        { name: "Angular", level: 85 },
+      ],
     },
     {
       title: "Backend Development",
@@ -31,7 +44,7 @@ const Skills = () => {
         { name: "REST APIs", level: 95 },
         { name: "GraphQL", level: 80 },
         { name: "Microservices", level: 85 },
-      ]
+      ],
     },
     {
       title: "Database & Storage",
@@ -42,7 +55,7 @@ const Skills = () => {
         { name: "Redis", level: 80 },
         { name: "Firebase", level: 85 },
         { name: "AWS S3", level: 80 },
-      ]
+      ],
     },
     {
       title: "DevOps & Tools",
@@ -53,7 +66,7 @@ const Skills = () => {
         { name: "CI/CD", level: 85 },
         { name: "Git", level: 90 },
         { name: "Linux", level: 85 },
-      ]
+      ],
     },
     {
       title: "Mobile Development",
@@ -64,7 +77,7 @@ const Skills = () => {
         { name: "Mobile UI/UX", level: 80 },
         { name: "App Store", level: 75 },
         { name: "Play Store", level: 75 },
-      ]
+      ],
     },
     {
       title: "Additional Skills",
@@ -75,12 +88,15 @@ const Skills = () => {
         { name: "Performance", level: 85 },
         { name: "Agile", level: 90 },
         { name: "Documentation", level: 85 },
-      ]
-    }
+      ],
+    },
   ];
 
   return (
-    <div id="skills" className="w-full min-h-screen bg-primary text-textPrimary">
+    <div
+      id="skills"
+      className="w-full min-h-screen bg-primary text-textPrimary"
+    >
       <div className="max-w-[1200px] mx-auto px-8 py-16">
         <motion.div
           ref={ref}
@@ -89,8 +105,10 @@ const Skills = () => {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <h2 className="text-4xl font-bold text-secondary mb-8">Technical Expertise</h2>
-          
+          <h2 className="text-4xl font-bold text-secondary mb-8">
+            Technical Expertise
+          </h2>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {skillCategories.map((category, index) => (
               <motion.div
@@ -100,9 +118,7 @@ const Skills = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-tertiary p-6 rounded-lg shadow-xl"
               >
-                <div className="text-secondary mb-4">
-                  {category.icon}
-                </div>
+                <div className="text-secondary mb-4">{category.icon}</div>
                 <h3 className="text-xl font-bold text-secondary mb-6">
                   {category.title}
                 </h3>
@@ -133,4 +149,4 @@ const Skills = () => {
   );
 };
 
-export default Skills; 
+export default Skills;

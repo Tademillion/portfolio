@@ -1,5 +1,5 @@
-import React from 'react';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import React from "react";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="flex flex-col items-center justify-center">
           <div className="flex space-x-6 mb-4">
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/Tademillion"
               target="_blank"
               rel="noopener noreferrer"
               className="text-textSecondary hover:text-secondary transition-colors duration-300"
@@ -16,7 +16,7 @@ const Footer = () => {
               <FaGithub size={24} />
             </a>
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://et.linkedin.com/in/tade-million-60735a344"
               target="_blank"
               rel="noopener noreferrer"
               className="text-textSecondary hover:text-secondary transition-colors duration-300"
@@ -24,7 +24,7 @@ const Footer = () => {
               <FaLinkedin size={24} />
             </a>
             <a
-              href="https://twitter.com/yourusername"
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
               className="text-textSecondary hover:text-secondary transition-colors duration-300"
@@ -41,4 +41,4 @@ const Footer = () => {
   );
 };
 
-export default Footer; 
+export default Footer;

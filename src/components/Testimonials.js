@@ -16,19 +16,19 @@ const Testimonials = () => {
       name: "John Smith",
       position: "Senior Developer at TechCorp",
       image: "https://randomuser.me/api/portraits/men/1.jpg",
-      text: "Working with Tade was an absolute pleasure. His attention to detail and problem-solving skills are exceptional. He consistently delivered high-quality code and was always willing to help team members.",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     },
     {
       name: "Sarah Johnson",
       position: "Project Manager at InnovateX",
       image: "https://randomuser.me/api/portraits/women/1.jpg",
-      text: "Tade's technical expertise and communication skills made him an invaluable asset to our team. He not only delivered excellent work but also helped improve our development processes.",
+      text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     },
     {
       name: "Michael Chen",
       position: "CTO at StartupHub",
       image: "https://randomuser.me/api/portraits/men/2.jpg",
-      text: "I was impressed by Tade's ability to quickly adapt to new technologies and his commitment to writing clean, maintainable code. He's a true professional who goes above and beyond.",
+      text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
     },
   ];
 
