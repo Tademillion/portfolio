@@ -63,7 +63,7 @@ const About = () => {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <h2 className="text-4xl font-bold text-secondary mb-8">About Tade Million</h2>
+          <h2 className="text-4xl font-bold text-secondary mb-8">About Me</h2>
 
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
             <motion.div
