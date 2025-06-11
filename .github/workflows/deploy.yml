@@ -1,5 +1,13 @@
 name: Deploy React Vite App to Vercel
-
+version: 1.0.0
+description: Deploys a React Vite application to Vercel on pushes to the main branch or pull requests.
+# This GitHub Actions workflow automates the deployment of a React Vite application to Vercel.
+# It triggers on pushes to the main branch and optionally on pull requests, building the project and deploying it to Vercel.
+# When an event occurs (like a push to main), GitHub's Actions runner reads and parses the .yml file,
+# then interprate the .yml file depend on the instructions
+# on sectionn trigger the section
+# on push branches - main means when the code is push to the main branches
+# the the job section done its job
 on:
   push:
     branches:

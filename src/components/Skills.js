@@ -1,21 +1,13 @@
-import React from "react";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 import {
-  FaReact,
-  FaNodeJs,
   FaDatabase,
-  FaTools,
-  FaServer,
   FaMobile,
+  FaNodeJs,
+  FaReact,
+  FaServer,
+  FaTools,
 } from "react-icons/fa";
-import {
-  SiTypescript,
-  SiJavascript,
-  SiPython,
-  SiDocker,
-  SiAws,
-} from "react-icons/si";
+import { useInView } from "react-intersection-observer";
 
 const Skills = () => {
   const [ref, inView] = useInView({
