@@ -1,15 +1,15 @@
-import React, { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import {
-  FaGithub,
-  FaExternalLinkAlt,
-  FaServer,
-  FaDatabase,
-  FaCode,
   FaChevronLeft,
   FaChevronRight,
+  FaCode,
+  FaDatabase,
+  FaExternalLinkAlt,
+  FaGithub,
+  FaServer,
 } from "react-icons/fa";
+import { useInView } from "react-intersection-observer";
 
 const Projects = () => {
   const [ref, inView] = useInView({
