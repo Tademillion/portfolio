@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-primary text-textPrimary py-8">
+    <footer className="w-full bg-primary text-textPrimary py-8" id="footer">
       <div className="max-w-[1200px] mx-auto px-8">
         <div className="flex flex-col items-center justify-center">
           <div className="flex space-x-6 mb-4">
@@ -24,7 +24,7 @@ const Footer = () => {
               <FaLinkedin size={24} />
             </a>
             <a
-              href="#"
+              href="footer"
               target="_blank"
               rel="noopener noreferrer"
               className="text-textSecondary hover:text-secondary transition-colors duration-300"
