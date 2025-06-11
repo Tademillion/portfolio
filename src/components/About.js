@@ -28,27 +28,27 @@ const About = () => {
       icon: <FaTrophy className="text-3xl" />,
       title: "Awards & Recognition",
       items: [
-        "Best Developer Award 2023",
-        "Hackathon Winner - Tech Innovation 2022",
-        "Open Source Contributor of the Year 2021",
+        "lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        "lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        "lorem ipsum dolor sit amet, consectetur adipiscing elit",
       ],
     },
     {
       icon: <FaLightbulb className="text-3xl" />,
       title: "Innovation & Impact",
       items: [
-        "Developed solutions used by 100K+ users",
-        "Reduced system response time by 60%",
-        "Implemented cost-saving measures saving $500K annually",
+        "lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        "lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        "lorem ipsum dolor sit amet, consectetur adipiscing elit",
       ],
     },
     {
       icon: <FaHeart className="text-3xl" />,
       title: "Community & Leadership",
       items: [
-        "Tech Community Lead - 500+ members",
-        "Mentored 50+ junior developers",
-        "Regular speaker at tech conferences",
+        "lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        "lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        "lorem ipsum dolor sit amet, consectetur adipiscing elit",
       ],
     },
   ];
