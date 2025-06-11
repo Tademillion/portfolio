@@ -1,8 +1,7 @@
-import React from "react";
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaTwitter, FaTelegram } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTelegram } from "react-icons/fa";
+import { useInView } from "react-intersection-observer";
 import my_image from "../../src/images/my_image.png"; // Adjust the path as necessary
-import { useInView } from 'react-intersection-observer';
 
 const Hero = () => {
   const [ref, inView] = useInView({
@@ -567,7 +566,7 @@ const Hero = () => {
                     aliqua.
                   </p>
                   <a
-                    href="#"
+                    href="home"
                     className="text-secondary hover:text-primary transition-colors duration-300"
                     target="_blank"
                     rel="noreferrer"
@@ -586,7 +585,7 @@ const Hero = () => {
                     laboris nisi ut aliquip ex ea commodo consequat.
                   </p>
                   <a
-                    href="#"
+                    href="home"
                     className="text-secondary hover:text-primary transition-colors duration-300"
                     target="_blank"
                     rel="noreferrer"
@@ -603,7 +602,7 @@ const Hero = () => {
                     esse cillum dolore eu fugiat nulla pariatur.
                   </p>
                   <a
-                    href="#"
+                    href="home"
                     className="text-secondary hover:text-primary transition-colors duration-300"
                     target="_blank"
                     rel="noreferrer"
@@ -620,7 +619,7 @@ const Hero = () => {
                     culpa qui officia deserunt mollit anim id est laborum.
                   </p>
                   <a
-                    href="#"
+                    href="home"
                     className="text-secondary hover:text-primary transition-colors duration-300"
                     target="_blank"
                     rel="noreferrer"
@@ -643,7 +642,7 @@ const Hero = () => {
                     aliqua.
                   </p>
                   <a
-                    href="#"
+                    href="home"
                     className="text-secondary hover:text-primary transition-colors duration-300"
                     target="_blank"
                     rel="noreferrer"
@@ -662,7 +661,7 @@ const Hero = () => {
                     laboris nisi ut aliquip ex ea commodo consequat.
                   </p>
                   <a
-                    href="#"
+                    href="home"
                     className="text-secondary hover:text-primary transition-colors duration-300"
                     target="_blank"
                     rel="noreferrer"
@@ -679,7 +678,7 @@ const Hero = () => {
                     esse cillum dolore eu fugiat nulla pariatur.
                   </p>
                   <a
-                    href="#"
+                    href="home"
                     className="text-secondary hover:text-primary transition-colors duration-300"
                     target="_blank"
                     rel="noreferrer"
@@ -696,7 +695,7 @@ const Hero = () => {
                     culpa qui officia deserunt mollit anim id est laborum.
                   </p>
                   <a
-                    href="#"
+                    href="home"
                     className="text-secondary hover:text-primary transition-colors duration-300"
                     target="_blank"
                     rel="noreferrer"
