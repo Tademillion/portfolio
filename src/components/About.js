@@ -8,6 +8,7 @@ const About = () => {
     triggerOnce: true,
     threshold: 0.1,
   });
+  // hello welcome to the ci/cd projects fine this was corrects
   // add some skills data if needed
   // const skills = [
   //   { name: "HTML & CSS", level: "90%" },
