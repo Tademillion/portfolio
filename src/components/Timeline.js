@@ -1,7 +1,7 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { FaBriefcase, FaGraduationCap, FaAward } from 'react-icons/fa';
+import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { FaBriefcase, FaGraduationCap, FaAward } from "react-icons/fa";
 
 const Timeline = () => {
   const [ref, inView] = useInView({
@@ -27,33 +27,39 @@ const Timeline = () => {
     //   icon: <FaGraduationCap />,
     // },
     {
-      type: 'work',
-      title: 'Full Stack Developer',
-      company: 'Amhara Bank',
-      period: '2020 - 2023',
-      description: 'ERP System Focused on Problem Solvoing System Like Human Resource Management System and Stock Management System',
+      type: "work",
+      title: "Full Stack Developer",
+      company: "Amhara Bank",
+      period: "2020 - 2023",
+      description:
+        "ERP System Focused on Problem Solvoing System Like Human Resource Management System and Stock Management System",
       icon: <FaBriefcase />,
     },
     {
-      type: 'award',
-      title: 'Award Name',
-      institution: 'Comapany',
-      period: '2022',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',
+      type: "award",
+      title: "Award",
+      institution: "Comapany X",
+      period: "2022",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
       icon: <FaAward />,
     },
     {
-      type: 'education',
-      title: 'Bachelor of Computer Science',
-      institution: 'Mekdela Amba University',
-      period: '2019 - 2023',
-      description: 'Focused on Software Development and Database Management. Participated in multiple hackathons and coding competitions.',
+      type: "education",
+      title: "Bachelor of Computer Science",
+      institution: "Mekdela Amba University",
+      period: "2019 - 2023",
+      description:
+        "Focused on Software Development and Database Management. Participated in multiple hackathons and coding competitions.",
       icon: <FaGraduationCap />,
     },
   ];
 
   return (
-    <div id="timeline" className="w-full min-h-screen bg-primary text-textPrimary">
+    <div
+      id="timeline"
+      className="w-full min-h-screen bg-primary text-textPrimary"
+    >
       <div className="max-w-[1200px] mx-auto px-8 py-16">
         <motion.div
           ref={ref}
@@ -62,8 +68,10 @@ const Timeline = () => {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <h2 className="text-4xl font-bold text-secondary mb-8">Professional Journey</h2>
-          
+          <h2 className="text-4xl font-bold text-secondary mb-8">
+            Professional Journey
+          </h2>
+
           <div className="relative">
             {/* Timeline Line */}
             <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-secondary/30" />
@@ -76,7 +84,7 @@ const Timeline = () => {
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className={`relative flex items-center ${
-                    index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
+                    index % 2 === 0 ? "flex-row" : "flex-row-reverse"
                   }`}
                 >
                   {/* Timeline Dot */}
@@ -85,7 +93,11 @@ const Timeline = () => {
                   </div>
 
                   {/* Content */}
-                  <div className={`w-1/2 ${index % 2 === 0 ? 'pr-12 text-right' : 'pl-12'}`}>
+                  <div
+                    className={`w-1/2 ${
+                      index % 2 === 0 ? "pr-12 text-right" : "pl-12"
+                    }`}
+                  >
                     <div className="bg-tertiary p-6 rounded-lg shadow-xl">
                       <h3 className="text-xl font-bold text-secondary mb-2">
                         {item.title}
@@ -107,4 +119,4 @@ const Timeline = () => {
   );
 };
 
-export default Timeline; 
+export default Timeline;
