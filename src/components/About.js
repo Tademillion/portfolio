@@ -9,19 +9,19 @@ const About = () => {
     threshold: 0.1,
   });
 
-  const skills = [
-    { name: "HTML & CSS", level: "90%" },
-    { name: "JavaScript", level: "80%" },
-    { name: "TypeScript", level: "70%" },
+  // const skills = [
+  //   { name: "HTML & CSS", level: "90%" },
+  //   { name: "JavaScript", level: "80%" },
+  //   { name: "TypeScript", level: "70%" },
 
-    { name: "React", level: "85%" },
-    { name: "Node.js", level: "60%" },
-    { name: "Express.js", level: "60%" },
-    { name: ".NET Core and Web Frameworks", level: "75%" },
-    { name: "SQL", level: "70%" },
-    { name: "MongoDB", level: "50%" },
-    { name: "Git & GitHub", level: "80%" },
-  ];
+  //   { name: "React", level: "85%" },
+  //   { name: "Node.js", level: "60%" },
+  //   { name: "Express.js", level: "60%" },
+  //   { name: ".NET Core and Web Frameworks", level: "75%" },
+  //   { name: "SQL", level: "70%" },
+  //   { name: "MongoDB", level: "50%" },
+  //   { name: "Git & GitHub", level: "80%" },
+  // ];
 
   const achievements = [
     {

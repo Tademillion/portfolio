@@ -25,9 +25,6 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitError(null);
-    setSubmitSuccess(false);
 
     try {
       const response = await fetch("http://localhost:3001/api/send-email", {
@@ -41,21 +38,11 @@ const Contact = () => {
 
       if (response.ok) {
         setFormData({ name: "", email: "", subject: "", message: "" }); // Clear form on success
-        setSubmitSuccess(true);
+
         console.log("Email sent successfully");
-      } else {
-        const errorData = await response.json();
-        setSubmitError(
-          errorData.message || "Failed to send email. Please try again."
-        );
       }
     } catch (error) {
-      setSubmitError(
-        "An unexpected error occurred. Please check your network connection."
-      );
       console.error("Error sending message", error);
-    } finally {
-      setIsSubmitting(false);
     }
   };
 

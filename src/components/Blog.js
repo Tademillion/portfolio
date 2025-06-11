@@ -1,7 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { FaCalendarAlt, FaClock, FaTag } from 'react-icons/fa';
+import { motion } from "framer-motion";
+import { FaCalendarAlt, FaClock } from "react-icons/fa";
+import { useInView } from "react-intersection-observer";
 
 const Blog = () => {
   const [ref, inView] = useInView({
@@ -12,27 +11,33 @@ const Blog = () => {
   const articles = [
     {
       title: "Building Scalable React Applications",
-      excerpt: "Learn the best practices for creating maintainable and scalable React applications, including state management, code splitting, and performance optimization.",
+      excerpt:
+        "Learn the best practices for creating maintainable and scalable React applications, including state management, code splitting, and performance optimization.",
       date: "March 15, 2024",
       readTime: "8 min read",
       tags: ["React", "Performance", "Best Practices"],
-      image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      image:
+        "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
     },
     {
       title: "Mastering TypeScript for Enterprise Applications",
-      excerpt: "A comprehensive guide to using TypeScript in large-scale applications, covering advanced types, decorators, and integration with popular frameworks.",
+      excerpt:
+        "A comprehensive guide to using TypeScript in large-scale applications, covering advanced types, decorators, and integration with popular frameworks.",
       date: "March 10, 2024",
       readTime: "12 min read",
       tags: ["TypeScript", "Enterprise", "Development"],
-      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      image:
+        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
     },
     {
       title: "The Future of Web Development: What's Next?",
-      excerpt: "Exploring upcoming trends in web development, from WebAssembly to Edge Computing, and how they'll shape the future of the industry.",
+      excerpt:
+        "Exploring upcoming trends in web development, from WebAssembly to Edge Computing, and how they'll shape the future of the industry.",
       date: "March 5, 2024",
       readTime: "10 min read",
       tags: ["Web Development", "Future Tech", "Trends"],
-      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      image:
+        "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
     },
   ];
 
@@ -46,8 +51,10 @@ const Blog = () => {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <h2 className="text-4xl font-bold text-secondary mb-8">Latest Articles</h2>
-          
+          <h2 className="text-4xl font-bold text-secondary mb-8">
+            Latest Articles
+          </h2>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {articles.map((article, index) => (
               <motion.article
@@ -69,9 +76,7 @@ const Blog = () => {
                   <h3 className="text-xl font-bold text-secondary mb-3">
                     {article.title}
                   </h3>
-                  <p className="text-textSecondary mb-4">
-                    {article.excerpt}
-                  </p>
+                  <p className="text-textSecondary mb-4">{article.excerpt}</p>
                   <div className="flex items-center gap-4 text-sm text-textSecondary mb-4">
                     <div className="flex items-center gap-1">
                       <FaCalendarAlt />
@@ -111,4 +116,4 @@ const Blog = () => {
   );
 };
 
-export default Blog; 
+export default Blog;

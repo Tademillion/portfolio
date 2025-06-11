@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import {
   FaChevronLeft,
   FaChevronRight,
@@ -94,21 +94,22 @@ const Projects = () => {
     setDirection(-1);
     setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length);
   };
-
+  if (isAutoScrolling) {
+  }
   // Auto-scroll functionality
-  useEffect(() => {
-    if (isAutoScrolling) {
-      autoScrollRef.current = setInterval(() => {
-        nextProject();
-      }, 5000); // Change project every 5 seconds
-    }
+  // useEffect(() => {
+  //   if (isAutoScrolling) {
+  //     autoScrollRef.current = setInterval(() => {
+  //       nextProject();
+  //     }, 5000); // Change project every 5 seconds
+  //   }
 
-    return () => {
-      if (autoScrollRef.current) {
-        clearInterval(autoScrollRef.current);
-      }
-    };
-  }, [isAutoScrolling]);
+  //   return () => {
+  //     if (autoScrollRef.current) {
+  //       clearInterval(autoScrollRef.current);
+  //     }
+  //   };
+  // }, [isAutoScrolling]);
 
   // Pause auto-scroll on manual interaction
   const handleManualScroll = (action) => {
