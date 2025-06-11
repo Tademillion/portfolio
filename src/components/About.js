@@ -8,7 +8,7 @@ const About = () => {
     triggerOnce: true,
     threshold: 0.1,
   });
-
+  // add some skills data if needed
   // const skills = [
   //   { name: "HTML & CSS", level: "90%" },
   //   { name: "JavaScript", level: "80%" },
