@@ -30,8 +30,8 @@ const About = () => {
       items: [
         "Best Developer Award 2023",
         "Hackathon Winner - Tech Innovation 2022",
-        "Open Source Contributor of the Year 2021"
-      ]
+        "Open Source Contributor of the Year 2021",
+      ],
     },
     {
       icon: <FaLightbulb className="text-3xl" />,
@@ -39,8 +39,8 @@ const About = () => {
       items: [
         "Developed solutions used by 100K+ users",
         "Reduced system response time by 60%",
-        "Implemented cost-saving measures saving $500K annually"
-      ]
+        "Implemented cost-saving measures saving $500K annually",
+      ],
     },
     {
       icon: <FaHeart className="text-3xl" />,
@@ -48,9 +48,9 @@ const About = () => {
       items: [
         "Tech Community Lead - 500+ members",
         "Mentored 50+ junior developers",
-        "Regular speaker at tech conferences"
-      ]
-    }
+        "Regular speaker at tech conferences",
+      ],
+    },
   ];
 
   return (
@@ -64,7 +64,7 @@ const About = () => {
           className="text-center"
         >
           <h2 className="text-4xl font-bold text-secondary mb-8">About Me</h2>
-          
+
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -73,48 +73,55 @@ const About = () => {
               className="text-left"
             >
               <p className="text-textSecondary mb-4">
-                I'm a passionate Full Stack Developer with a keen eye for creating elegant solutions to complex problems. 
-                With over 5 years of experience in web development, I've worked on projects ranging from small business websites 
-                to large-scale enterprise applications.
+                I'm a passionate Full Stack Developer with a keen eye for
+                creating elegant solutions to complex problems. With over 1.5
+                years of experience in web development, I've worked on projects
+                ranging from small business websites to large-scale enterprise
+                applications.
               </p>
               <p className="text-textSecondary mb-4">
-                My journey in tech started with a curiosity about how things work on the web, which led me to dive deep into 
-                both frontend and backend development. I believe in writing clean, maintainable code and staying up-to-date 
-                with the latest technologies and best practices.
+                My journey in tech started with a curiosity about how things
+                work on the web, which led me to dive deep into both frontend
+                and backend development. I believe in writing clean,
+                maintainable code and staying up-to-date with the latest
+                technologies and best practices.
               </p>
               <p className="text-textSecondary">
-                When I'm not coding, you can find me contributing to open-source projects, mentoring junior developers, 
-                or exploring new technologies. I'm always excited to take on new challenges and learn from every experience.
+                When I'm not coding, you can find me exploring new technologies.
+                I'm always excited to take on new challenges and learn from
+                every experience.
               </p>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.4 }}
               className="bg-tertiary p-8 rounded-lg shadow-xl"
             >
-              <h3 className="text-2xl font-bold text-secondary mb-6">Quick Facts</h3>
+              <h3 className="text-2xl font-bold text-secondary mb-6">
+                Quick Facts
+              </h3>
               <ul className="space-y-4 text-left">
                 <li className="flex items-center gap-3">
                   <span className="text-secondary">📍</span>
-                  <span>Based in New York, USA</span>
+                  <span>Based in Addis Ababa, Ethiopia</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="text-secondary">🎓</span>
-                  <span>Master's in Computer Science</span>
+                  <span>Bacelor degree in Computer Science</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="text-secondary">💼</span>
-                  <span>5+ Years of Experience</span>
+                  <span>1.5+ Years of Experience</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="text-secondary">🌐</span>
-                  <span>Worked with 20+ Clients</span>
+                  <span>Worked with many Clients</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="text-secondary">🚀</span>
-                  <span>Launched 15+ Projects</span>
+                  <span>Launched many Projects</span>
                 </li>
               </ul>
             </motion.div>
@@ -129,15 +136,16 @@ const About = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-tertiary p-6 rounded-lg shadow-xl"
               >
-                <div className="text-secondary mb-4">
-                  {achievement.icon}
-                </div>
+                <div className="text-secondary mb-4">{achievement.icon}</div>
                 <h3 className="text-xl font-bold text-secondary mb-4">
                   {achievement.title}
                 </h3>
                 <ul className="space-y-2 text-left">
                   {achievement.items.map((item, i) => (
-                    <li key={i} className="text-textSecondary flex items-start gap-2">
+                    <li
+                      key={i}
+                      className="text-textSecondary flex items-start gap-2"
+                    >
                       <span className="text-secondary mt-1">•</span>
                       {item}
                     </li>
